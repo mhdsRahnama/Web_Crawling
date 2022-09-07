@@ -5,7 +5,6 @@ import csv
 from urllib.parse import urlparse, parse_qs
 import validators
 
-
 ###### Running ##########
 #scrapy runspider web_scraping.py -o output.csv
 ################
@@ -43,6 +42,4 @@ class QuotesSpider(scrapy.Spider):
                 yield {"url":url[0],
                        "domain":domain
                        }
-
-
    
