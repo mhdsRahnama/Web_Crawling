@@ -29,9 +29,7 @@ class QuotesSpider(scrapy.Spider):
             nextpage = "https://www.google.com/search?q="+next.split("/search?q=")[-1]
             yield scrapy.Request(nextpage)
             self.next_depth+=1
-
-        # print("next:",next)
-        # print(nextpage)
+    
         links=response.xpath('//a/@href').extract()
 
         for url in links:
