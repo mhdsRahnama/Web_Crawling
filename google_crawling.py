@@ -35,7 +35,7 @@ class QuotesSpider(scrapy.Spider):
         for url in links:
             if url.startswith("/url?"):
                 url = parse_qs(urlparse(url).query)['q']
-            # print(url[0])
+           
             if validators.url(url[0]):
                 domain = (urlparse(url[0]).netloc)
                 if domain.startswith("www."):  ## It must be checked because the string may contain "www.".
