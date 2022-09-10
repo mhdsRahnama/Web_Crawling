@@ -1,3 +1,7 @@
+"""
+Extracting all urls and domains from google search result pages
+"""
+
 import scrapy
 import re
 import pandas
@@ -12,7 +16,7 @@ import validators
 class QuotesSpider(scrapy.Spider):
     
     name = "quotes"
-    query="پایتون"
+    query="پایتون" 
     start_urls = ["https://www.google.com/search?q="+query]
     next_depth=0 ### Counter of next page
     max_depth=3 #### Number of next page
@@ -42,6 +46,7 @@ class QuotesSpider(scrapy.Spider):
                 domain = (urlparse(url[0]).netloc)
                 if domain.startswith("www."):  ## It must be checked because the string may contain "www.".
                     domain = domain.split("www.")[1]
+                    
                 yield {"url":url[0],
                        "domain":domain
                        }
