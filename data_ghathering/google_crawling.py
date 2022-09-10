@@ -1,5 +1,5 @@
 """
-Extracting all urls and domains from google search result pages. It is appropriate for gathering data.
+Extracting all URLs and domains from google search result pages. It is appropriate for gathering data.
 """
 
 import scrapy
