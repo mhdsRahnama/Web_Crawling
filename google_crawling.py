@@ -19,7 +19,7 @@ class QuotesSpider(scrapy.Spider):
     query="پایتون" 
     start_urls = ["https://www.google.com/search?q="+query]
     next_depth=0 ### Counter of next page
-    max_depth=3 #### Number of next page
+    max_depth=3 #### Number of next pages
 
     def parse(self, response):
         
