@@ -21,7 +21,7 @@ class QuotesSpider(scrapy.Spider):
     next_depth=0 ### Counter of next page
     max_depth=3 #### Number of next pages
 
-    def parse(self, response):
+    def parse(self, response): 
         
         #### You can save the html content #############
         # filename = response.url.split("/")[-2] + '.html'
