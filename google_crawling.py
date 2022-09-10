@@ -14,13 +14,16 @@ class QuotesSpider(scrapy.Spider):
     name = "quotes"
     query="پایتون"
     start_urls = ["https://www.google.com/search?q="+query]
-    next_depth=0
-    max_depth=3
+    next_depth=0 ### Counter of next page
+    max_depth=3 #### Number of next page
 
     def parse(self, response):
+        
+        #### You can save the html content #############
         # filename = response.url.split("/")[-2] + '.html'
         # with open(filename, 'wb') as f:
         #     f.write(response.body)
+        #################################################
 
         if self.next_depth<self.max_depth:
 
