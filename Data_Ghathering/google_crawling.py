@@ -40,7 +40,8 @@ class QuotesSpider(scrapy.Spider):
 
                 for url in links:
             """
-            If you want parse each pages, comment part 2.
+            If you want parse each pages, comment part 2. 
+            Write your function in page_parser method.
             """
             ##################### Part 1 #########################
             # yield scrapy.Request(url[0], callback=self.page_parser)
