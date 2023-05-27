@@ -44,28 +44,28 @@ class QuotesSpider(scrapy.Spider):
             Write your function in page_parser method.
             """
             ##################### Part 1 #########################
-            # yield scrapy.Request(url[0], callback=self.page_parser)
+            yield scrapy.Request(url[0], callback=self.page_parser)
             ######################################################
 
             """
             If you want collect all pages's url, without parsing pages, comment part 1.
             """
             ##################### Part 2 #########################
-            if url.startswith("/url?"):
-                url = parse_qs(urlparse(url).query)['q']
-            # print(url[0])
-            if validators.url(url[0]):
-                domain = (urlparse(url[0]).netloc)
-                if domain.startswith("www."):  ## It must be checked because the string may contain "www.".
-                    domain = domain.split("www.")[1]
-                yield {"url": url[0],
-                       "domain": domain
-                       }
+            # if url.startswith("/url?"):
+            #     url = parse_qs(urlparse(url).query)['q']
+            # # print(url[0])
+            # if validators.url(url[0]):
+            #     domain = (urlparse(url[0]).netloc)
+            #     if domain.startswith("www."):  ## It must be checked because the string may contain "www.".
+            #         domain = domain.split("www.")[1]
+            #     yield {"url": url[0],
+            #            "domain": domain
+            #            }
             ######################################################
 
 
-def page_parser(self, response):
-    """
-    In this fuction, you can write your code for parsing each pages.
-    """
+    def page_parser(self, response):
+        """
+        In this fuction, you can write your code for parsing each pages.
+        """
 
